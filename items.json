@@ -1,0 +1,250 @@
+  {
+    "uuid": "",
+    "name": {
+      "english": null,
+      "pinyin": "",
+      "mandarin": "",
+      "mandarin_translated": "",
+      "japanese": null
+    },
+    "tags": [],
+    "type": "dish",
+    "description": "",
+    "ingredients": [],
+    "season": "",
+    "temperature": "",
+    "commonly_eaten_with": [],
+    "picture_url": "",
+    "wikipedia_url": ""
+  }
+[
+  {
+    "uuid": "cfbc78be-e158-44a0-9282-a9328f83a326",
+    "name": {
+      "english": "Thick Soy Sauce",
+      "pinyin": "Jiàngyóu ?",
+      "mandarin": "醬油?",
+      "mandarin_translated": "Thick Sauce Oil",
+      "japanese": null
+    },
+    "tags": ["sauce"],
+    "type": "ingredient",
+    "description": "",
+    "ingredients": [],
+    "season": "",
+    "temperature": "",
+    "commonly_eaten_with": [ "" ],
+    "picture_url": "",
+    "wikipedia_url": ""
+  },
+  {
+    "uuid": "1fe031e8-0a34-44b4-847c-1d8fb7e65766",
+    "name": {
+      "english": "Soy Sauce",
+      "pinyin": "Jiàngyóu",
+      "mandarin": "醬油",
+      "mandarin_translated": "Sauce Oil",
+      "japanese": null
+    },
+    "tags": ["sauce"],
+    "type": "ingredient",
+    "description": "",
+    "ingredients": [],
+    "season": "",
+    "temperature": "",
+    "commonly_eaten_with": [ "" ],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Soy_sauce_2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Soy_sauce"
+  },
+  {
+    "uuid": "32af6b1a-13cb-4f84-a863-edc83796b7b2",
+    "name": {
+      "english": null,
+      "pinyin": "Xiǎo lóng bāo",
+      "mandarin": "小籠包",
+      "mandarin_translated": "Little basket bun",
+      "japanese": null
+    },
+    "tag": ["dumpling"],
+    "type": "dish",
+    "description": "Dumplings with filling, which are steamed in a bamboo basket.",
+    "ingredients": [],
+    "season": "",
+    "temperature": "hot",
+    "commonly_eaten_with": [ "1fe031e8-0a34-44b4-847c-1d8fb7e65766" ],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Xiao_Long_Bao_at_Nanxiang_Mantou_Dian_1.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Xiaolongbao"
+  },
+  {
+    "uuid": "3e044f08-5651-4172-ba45-cd0895f8066e",
+    "name": {
+      "english": null,
+      "pinyin": "Dàn bǐng",
+      "mandarin": "蛋餅",
+      "mandarin_translated": "Egg Cake",
+      "japanese": null
+    },
+    "tag": ["breakfast"],
+    "type": "dish",
+    "description": "Pancake with egg. Can have multiple other fillings",
+    "ingredients": [],
+    "season": "",
+    "temperature": "hot",
+    "commonly_eaten_with": [],
+    "picture_url": null,
+    "wikipedia_url": null
+  },
+  {
+    "uuid": "bde66f60-b7c9-4651-98df-4dae76eaa324",
+    "name": {
+      "english": "Black Tea",
+      "pinyin": "Hóngchá",
+      "mandarin": "紅茶",
+      "mandarin_translated": "Red Tea",
+      "japanese": null
+    },
+    "tags": [],
+    "type": "drink",
+    "description": "",
+    "ingredients": [],
+    "season": "",
+    "temperature": "any",
+    "commonly_eaten_with": [],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Cup_of_black_tea.JPG/1280px-Cup_of_black_tea.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Black_tea"
+  },
+  {
+    "uuid": "58096582-fafd-4f77-ae7e-7a1517457185",
+    "name": {
+      "english": "Firm Tofu",
+      "pinyin": "Dòu gān",
+      "mandarin": "豆干",
+      "mandarin_translated": "Bean Dry",
+      "japanese": null
+    },
+    "tags": [],
+    "type": "ingredient",
+    "description": "Dry tofu that's firmer than regular one.",
+    "ingredients": [],
+    "season": "",
+    "temperature": "any",
+    "commonly_eaten_with": [],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/%E7%86%B1%E8%B1%86%E5%B9%B2_%2815175302911%29.jpg/1024px-%E7%86%B1%E8%B1%86%E5%B9%B2_%2815175302911%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dougan"
+  },
+  {
+    "uuid": "6d573317-dad4-451d-bc1b-7848c1b4f86f",
+    "name": {
+      "english": "Tofu",
+      "pinyin": "Dòu fu",
+      "mandarin": "豆腐",
+      "mandarin_translated": "Bean Rotten",
+      "japanese": null
+    },
+    "tags": [],
+    "type": "ingredient",
+    "description": "Dry tofu that's firmer than regular one.",
+    "ingredients": [],
+    "season": "",
+    "temperature": "any",
+    "commonly_eaten_with": [],
+    "picture_url": "",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tofu"
+  },
+  {
+    "uuid": "b556bc1c-46d9-482e-8757-768e1a7168d8",
+    "name": {
+      "english": "Tofu Skin",
+      "pinyin": "Dòu pí",
+      "mandarin": "豆皮",
+      "mandarin_translated": "Bean Skin",
+      "japanese": null
+    },
+    "tags": [],
+    "type": "ingredient",
+    "description": "Skin that forms on top of soymilk.",
+    "ingredients": [],
+    "season": "",
+    "temperature": "any",
+    "commonly_eaten_with": [],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Tofu_skin.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tofu_skin"
+  },
+  {
+    "uuid": "34483619-75bb-4c0c-bcb8-f8b1c3ded518",
+    "name": {
+      "english": "Sour and Spicy Soup",
+      "pinyin": "Suān làtāng",
+      "mandarin": "酸辣湯",
+      "mandarin_translated": "Sour Spicy Soup",
+      "japanese": null
+    },
+    "tags": ["soup"],
+    "type": "ingredient",
+    "description": "",
+    "ingredients": ["abb983ad-3fa8-43e5-931a-319dea82c0c5"],
+    "season": "",
+    "temperature": "any",
+    "commonly_eaten_with": [],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ping_SJ_hot_%26_sour_soup.JPG/1280px-Ping_SJ_hot_%26_sour_soup.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hot_and_sour_soup"
+  },
+  {
+    "uuid": "abb983ad-3fa8-43e5-931a-319dea82c0c5",
+    "name": {
+      "english": "Bamboo Shoots",
+      "pinyin": "zhú sǔn",
+      "mandarin": "竹筍",
+      "mandarin_translated": "Bamboo Shoots",
+      "japanese": null
+    },
+    "tags": [],
+    "type": "ingredient",
+    "description": "",
+    "ingredients": [],
+    "season": "",
+    "temperature": "",
+    "commonly_eaten_with": [],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Boldhamii_Shoots_Sliced.PNG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bamboo_shoot"
+  },
+  {
+    "uuid": "d5432a20-d4d9-4ec6-82c4-74e2f93c8136",
+    "name": {
+      "english": "Preserved Egg",
+      "pinyin": "Pí dàn",
+      "mandarin": "皮蛋",
+      "mandarin_translated": "Skin Egg",
+      "japanese": null
+    },
+    "tags": ["controversial"],
+    "type": "ingredient",
+    "description": "",
+    "ingredients": [],
+    "season": "",
+    "temperature": "",
+    "commonly_eaten_with": [],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Century_egg_sliced_open.jpeg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Century_egg"
+  },
+  {
+    "uuid": "25168c46-30e5-40ec-8035-ee13e2ae1132",
+    "name": {
+      "english": "Kimchi",
+      "pinyin": "Pàocài",
+      "mandarin": "泡菜",
+      "mandarin_translated": "Pickled Vegetable",
+      "japanese": null,
+      "korean": "김치"
+    },
+    "tags": [],
+    "type": "ingredient",
+    "description": "Types: Korean, Taiwanese, Golden",
+    "ingredients": [],
+    "season": "",
+    "temperature": "cold",
+    "commonly_eaten_with": [],
+    "picture_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Various_kimchi.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kimchi"
+  }
+]
