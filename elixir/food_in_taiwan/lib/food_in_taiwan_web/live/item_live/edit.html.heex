@@ -1,0 +1,17 @@
+<h2>Edit Item <%= @count %></h2>
+
+<.form let={f} for={@changeset} phx-change="validate" phx-submit="save">
+	<%= label f, :name %>
+	<%= text_input f, :name, phx_debounce: "blur" %>
+	<%= error_tag f, :name %>
+
+	<%= label f, :decription %>
+	<%= text_input f, :decription %>
+	<%= error_tag f, :decription %>
+
+	<div>
+		<%= submit "Save", phx_disable_with: "Saving..." %>
+	</div>
+</.form>
+
+<span><%= live_redirect "Back", to: Routes.item_index_path(@socket, :index) %></span>
