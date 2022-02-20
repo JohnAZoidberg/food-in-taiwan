@@ -1,0 +1,28 @@
+name: Elixir CI
+
+on:
+  push:
+    branches: [ master, gh-actions ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
+    strategy:
+      matrix:
+        otp: ['24.2'] # '20.3', '21.3', 
+        elixir: ['1.13.2']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{matrix.otp}}
+          elixir-version: ${{matrix.elixir}}
+      - name: Get Elixir dependencies
+        working-directory: ./elixir/food_in_taiwan
+        run: mix deps.get
+#     - name: Run Elixir tests
+#       working-directory: ./elixir/food_in_taiwan
+#       run: mix test
