@@ -1,5 +1,21 @@
 # Food in Taiwan
 
+Development:
+
+```sh
+docker run --detach --rm \
+  --name postgres \
+  -p 5432:5432 \
+  -e POSTGRES_PASSWORD=postgres \
+  -v $PWD/postgres-data:/var/lib/postgresql/data \
+  postgres:13
+mix ecto.migrate
+mix phx.server
+
+# Stop postgres container after you're done
+docker stop postgres
+```
+
 ## Use-cases
 
 Basic:
