@@ -16,7 +16,7 @@
 				<td><%= item.description %></td>
 
 				<td>
-					<%= live_redirect "Show", to: Routes.item_show_path(@socket, :show, item) %>
+					<%= live_redirect "Details", to: Routes.item_show_path(@socket, :show, item) %>
 					<%= live_redirect "Edit", to: Routes.item_edit_path(@socket, :edit, item) %>
 					<%= link "Delete", to: "#",
 							phx_click: "delete_item",

@@ -6,17 +6,69 @@ defmodule FoodInTaiwanWeb.ItemLive.Show do
 
   def render(assigns) do
     ~H"""
-    <h2>Show Item</h2>
-    <ul>
-      <li><b>Name:</b> <%= @item.name %></li>
-      <li><b>Description:</b> <%= @item.description %></li>
-      <li><a href={"#{@item.wikipedia_url}"}>Wikipedia</a></li>
-      <li>
-        <a href={"#{@item.picture_url}"}>
-          <img src={"#{@item.picture_url}"} width="150" />
-        </a>
-      </li>
-    </ul>
+    <h2><%= @item.name %></h2>
+
+    <!-- TODO: On mobile I'm gonna wanna do flex-wrap: wrap; -->
+    <div style="display: flex">
+      <p><%= @item.description %></p>
+
+      <a style="width: 200px" href={"#{@item.picture_url}"} target="_blank">
+        <img src={"#{@item.picture_url}"} />
+      </a>
+    </div>
+
+    <table>
+      <tr>
+        <th>Information</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Main Ingredients</td>
+        <td><a href="#">Soft Tofu</a>, <a href="#">Beef</a>, <a href="#">Chili</a>, <a href="#">豆瓣醬</a></td>
+      </tr>
+      <tr>
+        <td>Commonly eaten with</td>
+        <td><a href="#">Rice</a></td>
+      </tr>
+      <tr>
+        <td>Commonly eaten</td>
+        <td>Hot</td>
+      </tr>
+      <tr>
+        <td>Season</td>
+        <td>Winter</td>
+      </tr>
+      <tr>
+        <td><a href={"#{@item.wikipedia_url}"}>Wikipedia</a></td>
+        <td></td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>Names</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td>Mapo Tofu</td>
+      </tr>
+      <tr>
+        <td>Chinese</td>
+        <td>麻婆豆腐</td>
+      </tr>
+      <tr>
+        <td>PinYin</td>
+        <td>mápó dòufu</td>
+      </tr>
+      <tr>
+        <td>ZhuYin</td>
+        <td>ㄇㄚˊ ㄆㄛˊ ㄉㄡˋ ㄈㄨ</td>
+      </tr>
+      <tr>
+        <td>Literal Meaning</td>
+        <td>pockmarked old woman, beancurd</td>
+      </tr>
+    </table>
     <span><%= live_redirect "Edit", to: Routes.item_edit_path(@socket, :edit, @item) %></span>
     <span><%= live_redirect "Back", to: Routes.item_index_path(@socket, :index) %></span>
     """
