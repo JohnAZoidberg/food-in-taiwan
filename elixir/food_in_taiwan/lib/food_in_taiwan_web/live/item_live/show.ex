@@ -10,6 +10,12 @@ defmodule FoodInTaiwanWeb.ItemLive.Show do
     <ul>
       <li><b>Name:</b> <%= @item.name %></li>
       <li><b>Description:</b> <%= @item.description %></li>
+      <li><a href={"#{@item.wikipedia_url}"}>Wikipedia</a></li>
+      <li>
+        <a href={"#{@item.picture_url}"}>
+          <img src={"#{@item.picture_url}"} width="150" />
+        </a>
+      </li>
     </ul>
     <span><%= live_redirect "Edit", to: Routes.item_edit_path(@socket, :edit, @item) %></span>
     <span><%= live_redirect "Back", to: Routes.item_index_path(@socket, :index) %></span>

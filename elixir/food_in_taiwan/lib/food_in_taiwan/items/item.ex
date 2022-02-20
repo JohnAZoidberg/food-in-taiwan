@@ -5,6 +5,8 @@ defmodule FoodInTaiwan.Items.Item do
   schema "items" do
     field :name, :string
     field :description, :string
+    field :wikipedia_url, :string
+    field :picture_url, :string
 
     timestamps()
   end
@@ -12,7 +14,7 @@ defmodule FoodInTaiwan.Items.Item do
   @doc false
   def changeset(item, attrs) do
     item
-    |> cast(attrs, [:name, :description])
+    |> cast(attrs, [:name, :description, :wikipedia_url, :picture_url])
 
     # |> validate_required([:username, :email, :phone_number])
   end

@@ -9,6 +9,14 @@
 	<%= text_input f, :description %>
 	<%= error_tag f, :description %>
 
+	<%= label f, :wikipedia_url %>
+	<%= text_input f, :wikipedia_url %>
+	<%= error_tag f, :wikipedia_url %>
+
+	<%= label f, :picture_url %>
+	<%= text_input f, :picture_url %>
+	<%= error_tag f, :picture_url %>
+
 	<div>
 		<%= submit "Save", phx_disable_with: "Saving..." %>
 	</div>
