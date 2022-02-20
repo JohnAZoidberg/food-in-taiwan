@@ -58,7 +58,7 @@ defmodule FoodInTaiwanWeb.ItemLive.Show do
       </tr>
       <tr>
         <td>PinYin</td>
-        <td>mápó dòufu</td>
+        <td><%= Hanyutils.to_marked_pinyin("麻婆豆腐") %></td>
       </tr>
       <tr>
         <td>ZhuYin</td>
