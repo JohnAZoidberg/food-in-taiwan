@@ -13,6 +13,7 @@ defmodule FoodInTaiwan.Items.Item do
   def changeset(item, attrs) do
     item
     |> cast(attrs, [:name, :description])
-    #|> validate_required([:username, :email, :phone_number])
+
+    # |> validate_required([:username, :email, :phone_number])
   end
 end

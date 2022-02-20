@@ -32,9 +32,10 @@ defmodule FoodInTaiwanWeb.ItemLive.Row do
       <td><%= @item.description %> <%= @item.description %></td>
     </tr>
     """
-      #<td>
-      #  <%= live_component @socket, Email, id: "description-#{@id}", email: @item.email %>
-      #</td>
+
+    # <td>
+    #  <%= live_component @socket, Email, id: "description-#{@id}", email: @item.email %>
+    # </td>
   end
 
   def handle_event("click", _, socket) do

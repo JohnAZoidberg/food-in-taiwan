@@ -1,14 +1,13 @@
 import Config
 
 # Configure your database
-config :food_in_taiwan, FoodInTaiwan.Repo,
-  database: "food_items.db"
-  #username: "postgres",
-  #password: "postgres",
-  #database: "food_in_taiwan_dev",
-  #hostname: "localhost",
-  #show_sensitive_data_on_connection_error: true,
-  #pool_size: 10
+config :food_in_taiwan, FoodInTaiwan.Repo, database: "food_items.db"
+# username: "postgres",
+# password: "postgres",
+# database: "food_in_taiwan_dev",
+# hostname: "localhost",
+# show_sensitive_data_on_connection_error: true,
+# pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
