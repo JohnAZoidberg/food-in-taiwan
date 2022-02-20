@@ -11,6 +11,7 @@ defmodule FoodInTaiwanWeb.ItemLive.PresenceIndex do
       Phoenix.PubSub.subscribe(FoodInTaiwan.PubSub, "items")
       Presence.track(self(), "items", name, %{})
     end
+
     {:ok, fetch(socket)}
   end
 

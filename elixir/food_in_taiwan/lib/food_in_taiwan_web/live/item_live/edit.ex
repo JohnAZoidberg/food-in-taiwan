@@ -9,6 +9,7 @@ defmodule FoodInTaiwanWeb.ItemLive.Edit do
 
   def handle_params(%{"id" => id}, _url, socket) do
     item = Items.get_item!(id)
+
     {:noreply,
      assign(socket, %{
        item: item,

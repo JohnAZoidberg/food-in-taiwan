@@ -27,9 +27,11 @@ defmodule FoodInTaiwanWeb.ItemLive.Index do
   def handle_event("keydown", %{"key" => "ArrowLeft"}, socket) do
     {:noreply, go_page(socket, socket.assigns.page - 1)}
   end
+
   def handle_event("keydown", %{"key" => "ArrowRight"}, socket) do
     {:noreply, go_page(socket, socket.assigns.page + 1)}
   end
+
   def handle_event("keydown", _, socket), do: {:noreply, socket}
 
   def handle_event("delete_item", %{"id" => id}, socket) do
@@ -42,5 +44,6 @@ defmodule FoodInTaiwanWeb.ItemLive.Index do
   defp go_page(socket, page) when page > 0 do
     push_patch(socket, to: Routes.item_index_path(socket, :index, page: page))
   end
+
   defp go_page(socket, _page), do: socket
 end
