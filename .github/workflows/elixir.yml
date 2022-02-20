@@ -20,5 +20,9 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - run: mix deps.get
-      #- run: mix test
+      - name: Get Elixir dependencies
+        working-directory: ./elixir/food_in_taiwan
+        run: mix deps.get
+#     - name: Run Elixir tests
+#       working-directory: ./elixir/food_in_taiwan
+#       run: mix test
