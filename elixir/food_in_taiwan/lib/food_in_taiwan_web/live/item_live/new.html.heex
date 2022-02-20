@@ -5,6 +5,14 @@
 	<%= text_input f, :name, phx_debounce: "blur" %>
 	<%= error_tag f, :name %>
 
+	<%= label f, :mandarin %>
+	<%= text_input f, :mandarin, phx_debounce: "blur" %>
+	<%= error_tag f, :mandarin %>
+
+	<%= label f, :meaning %>
+	<%= text_input f, :meaning, phx_debounce: "blur" %>
+	<%= error_tag f, :meaning %>
+
 	<%= label f, :description %>
 	<%= text_input f, :description %>
 	<%= error_tag f, :description %>
