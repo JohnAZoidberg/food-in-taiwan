@@ -10,7 +10,8 @@ defmodule FoodInTaiwanWeb.ItemLive.Show do
 
     <!-- TODO: On mobile I'm gonna wanna do flex-wrap: wrap; -->
     <div style="display: flex">
-      <p><%= @item.description %></p>
+      <!-- Grow so that the picture is on the right when the description is too short to push it. -->
+      <p style="flex-grow: 1;"><%= @item.description %></p>
 
       <a style="width: 200px" href={"#{@item.picture_url}"} target="_blank">
         <img src={"#{@item.picture_url}"} />

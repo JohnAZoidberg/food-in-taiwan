@@ -17,7 +17,7 @@ defmodule FoodInTaiwanWeb.ItemLive.Index do
   defp fetch(socket) do
     %{page: page, per_page: per_page} = socket.assigns
     items = Items.list_items(page, per_page)
-    assign(socket, items: items, page_title: "Listing items – Page #{page}")
+    assign(socket, items: items, page_title: "Food Overview - Page #{page}")
   end
 
   def handle_info({Items, [:item | _], _}, socket) do
