@@ -14,6 +14,12 @@
       <section class="container">
         <h1>Food in Taiwan (食在臺灣)</h1>
       </section>
+      <nav id="menu">
+        <ul>
+          <li><%= live_redirect "Items", to: Routes.item_index_path(@conn, :index) %></li>
+          <li><%= live_redirect "Tags", to: Routes.tag_index_path(@conn, :index) %></li>
+        </ul>
+      </nav>
     </header>
     <%= @inner_content %>
   </body>
