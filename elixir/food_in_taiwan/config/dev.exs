@@ -4,7 +4,7 @@ import Config
 config :food_in_taiwan, FoodInTaiwan.Repo,
   username: "postgres",
   password: "postgres",
-  database: "food_in_taiwan_dev",
+  database: "food_in_taiwan",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
