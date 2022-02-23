@@ -2,6 +2,7 @@ defmodule FoodInTaiwanWeb.ItemLive.Edit do
   use FoodInTaiwanWeb, :live_view
 
   alias FoodInTaiwan.Items
+  alias FoodInTaiwan.Tags
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, count: 0)}
@@ -10,24 +11,38 @@ defmodule FoodInTaiwanWeb.ItemLive.Edit do
   def handle_params(%{"id" => id}, _url, socket) do
     item = Items.get_item!(id)
 
+    # Transform to strings and IDs for the HTML forms
+    tags = Tags.list_tags(1, 100) |> Map.new(fn tag -> {tag.name, tag.id} end)
+    selected = item.tags |> Enum.map(fn tag -> tag.id end)
+
     {:noreply,
      assign(socket, %{
        item: item,
-       changeset: Items.change_item(item)
+       changeset: Items.change_item(item, []),
+       tags: tags,
+       selected: selected
      })}
   end
 
   def handle_event("validate", %{"item" => params}, socket) do
+    # Turn IDs back to full objects
+    tag_ids = params["tags"] |> Enum.map(&String.to_integer/1)
+    tags = Tags.list_tags(1, 100) |> Enum.filter(fn tag -> Enum.member?(tag_ids, tag.id) end)
+
     changeset =
       socket.assigns.item
-      |> FoodInTaiwan.Items.change_item(params)
+      |> FoodInTaiwan.Items.change_item(params, tags)
       |> Map.put(:action, :update)
 
     {:noreply, assign(socket, changeset: changeset)}
   end
 
-  def handle_event("save", %{"item" => item_params}, socket) do
-    case Items.update_item(socket.assigns.item, item_params) do
+  def handle_event("save", %{"item" => params}, socket) do
+    # Turn IDs back to full objects
+    tag_ids = params["tags"] |> Enum.map(&String.to_integer/1)
+    tags = Tags.list_tags(1, 100) |> Enum.filter(fn tag -> Enum.member?(tag_ids, tag.id) end)
+
+    case Items.update_item(socket.assigns.item, params, tags) do
       {:ok, item} ->
         {:noreply,
          socket

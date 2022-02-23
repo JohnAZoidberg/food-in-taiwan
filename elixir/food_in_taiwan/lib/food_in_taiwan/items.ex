@@ -42,7 +42,10 @@ defmodule FoodInTaiwan.Items do
       iex> get_item!(456)
       ** (Ecto.NoResultsError)
   """
-  def get_item!(id), do: Repo.get!(Item, id)
+  def get_item!(id) do
+    Repo.get!(Item, id)
+    |> Repo.preload(:tags)
+  end
 
   @doc """
   Creates an item.
@@ -52,9 +55,9 @@ defmodule FoodInTaiwan.Items do
       iex> create_item(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
   """
-  def create_item(attrs \\ %{}) do
+  def create_item(attrs \\ %{}, tags) do
     %Item{}
-    |> Item.changeset(attrs)
+    |> Item.changeset_update_tags(attrs, tags)
     |> Repo.insert()
     |> notify_subscribers([:item, :created])
   end
@@ -62,14 +65,14 @@ defmodule FoodInTaiwan.Items do
   @doc """
   Updates a item.
   ## Examples
-      iex> update_item(item, %{field: new_value})
+      iex> update_item(item, %{field: new_value}, [])
       {:ok, %Item{}}
-      iex> update_item(item, %{field: bad_value})
+      iex> update_item(item, %{field: bad_value}, [])
       {:error, %Ecto.Changeset{}}
   """
-  def update_item(%Item{} = item, attrs) do
+  def update_item(%Item{} = item, attrs, tags) do
     item
-    |> Item.changeset(attrs)
+    |> Item.changeset_update_tags(attrs, tags)
     |> Repo.update()
     |> notify_subscribers([:item, :updated])
   end
@@ -94,8 +97,8 @@ defmodule FoodInTaiwan.Items do
       iex> change_item(item)
       %Ecto.Changeset{source: %Item{}}
   """
-  def change_item(item, attrs \\ %{}) do
-    Item.changeset(item, attrs)
+  def change_item(item, attrs \\ %{}, tags) do
+    Item.changeset_update_tags(item, attrs, tags)
   end
 
   defp notify_subscribers({:ok, result}, event) do

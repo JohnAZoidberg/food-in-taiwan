@@ -22,8 +22,10 @@ defmodule FoodInTaiwanWeb.Router do
     live "/items", ItemLive.Index, :index
     live "/items/new", ItemLive.New, :new
     live "/items/:id/edit", ItemLive.Edit, :edit
-
     live "/items/:id", ItemLive.Show, :show
+
+    live "/tags", TagLive.Index, :index
+    live "/tags/new", TagLive.New, :new
   end
 
   # Other scopes may use custom stacks.

@@ -25,6 +25,11 @@
 	<%= text_input f, :picture_url %>
 	<%= error_tag f, :picture_url %>
 
+	<label>
+		Tags:<br><%= multiple_select f, :tags, @tags, selected: @selected %>
+	</label>
+	<%= error_tag f, :tags %>
+
 	<div>
 		<%= submit "Save", phx_disable_with: "Saving..." %>
 	</div>

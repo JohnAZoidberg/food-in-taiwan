@@ -1,0 +1,34 @@
+<h2>Page <%= @page %></h2>
+
+<table phx-window-keydown="keydown" phx-throttle="500">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+		<%= for tag <- @tags do %>
+			<tr>
+				<td><%= tag.name %></td>
+
+				<td>
+					<%= link "Delete", to: "#",
+							phx_click: "delete_tag",
+							phx_value_id: tag.id %>
+				</td>
+			</tr>
+		<% end %>
+  </tbody>
+</table>
+
+<%= if @page > 1 do %>
+  <span><%= live_patch "prev", to: Routes.tag_index_path(@socket, :index, page: @page - 1) %></span>
+<% end %>
+<%= for i <- (@page - 5)..(@page + 5), i > 0 do %>
+  <span><%= live_patch "#{i}", to: Routes.tag_index_path(@socket, :index, page: i) %></span>
+<% end %>
+<span><%= live_patch "next", to: Routes.tag_index_path(@socket, :index, page: @page + 1) %></span>
+<br/>
+<span><%= live_redirect "New Tag", to: Routes.tag_new_path(@socket, :new) %></span>

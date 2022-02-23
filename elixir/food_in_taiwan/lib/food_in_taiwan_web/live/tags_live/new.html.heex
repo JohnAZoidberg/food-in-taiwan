@@ -1,0 +1,13 @@
+<h2>Add a new tag</h2>
+
+<.form let={f} for={@changeset} phx-change="validate" phx-submit="save">
+	<%= label f, :name %>
+	<%= text_input f, :name, phx_debounce: "blur" %>
+	<%= error_tag f, :name %>
+
+	<div>
+		<%= submit "Save", phx_disable_with: "Saving..." %>
+	</div>
+</.form>
+
+<span><%= live_redirect "Back", to: Routes.tag_index_path(@socket, :index) %></span>

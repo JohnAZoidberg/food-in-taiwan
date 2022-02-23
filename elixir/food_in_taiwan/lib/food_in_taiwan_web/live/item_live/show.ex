@@ -2,6 +2,7 @@ defmodule FoodInTaiwanWeb.ItemLive.Show do
   use FoodInTaiwanWeb, :live_view
 
   alias FoodInTaiwan.Items
+  alias FoodInTaiwan.Tags
   alias Phoenix.LiveView.Socket
 
   def mount(_params, _session, socket) do
@@ -14,7 +15,13 @@ defmodule FoodInTaiwanWeb.ItemLive.Show do
   end
 
   defp fetch(%Socket{assigns: %{id: id}} = socket) do
-    assign(socket, item: Items.get_item!(id))
+    item = Items.get_item!(id)
+    seasons = item.tags |> Enum.map(& &1.name) |> Enum.filter(&Enum.member?(Tags.seasons(), &1))
+
+    temperatures =
+      item.tags |> Enum.map(& &1.name) |> Enum.filter(&Enum.member?(Tags.temperatures(), &1))
+
+    assign(socket, item: item, seasons: seasons, temperatures: temperatures)
   end
 
   def handle_info({Items, [:item, :updated], _}, socket) do

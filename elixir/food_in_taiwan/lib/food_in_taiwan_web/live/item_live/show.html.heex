@@ -25,15 +25,19 @@
   </tr>
   <tr>
     <td>Commonly eaten</td>
-    <td>Hot</td>
+    <td><%= @temperatures |> Enum.join ", " %></td>
   </tr>
   <tr>
     <td>Season</td>
-    <td>Winter</td>
+    <td><%= @seasons |> Enum.join ", " %></td>
   </tr>
   <tr>
     <td><a href={"#{@item.wikipedia_url}"}>Wikipedia</a></td>
     <td></td>
+  </tr>
+  <tr>
+    <td>Tags</td>
+    <td><%= @item.tags |> Enum.map(&(&1.name)) |> Enum.join ", " %></td>
   </tr>
 </table>
 <table>
