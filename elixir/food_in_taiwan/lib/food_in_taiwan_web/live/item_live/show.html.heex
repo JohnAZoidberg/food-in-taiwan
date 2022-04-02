@@ -63,7 +63,11 @@
   </tr>
   <tr>
     <td>ZhuYin</td>
-    <td>ㄇㄚˊ ㄆㄛˊ ㄉㄡˋ ㄈㄨ</td>
+    <%= if @item.mandarin do %>
+    <td><%= Hanyutils.to_zhuyin(@item.mandarin) %></td>
+    <% else %>
+    <td></td>
+    <% end %>
   </tr>
   <tr>
     <td>Literal Meaning</td>
