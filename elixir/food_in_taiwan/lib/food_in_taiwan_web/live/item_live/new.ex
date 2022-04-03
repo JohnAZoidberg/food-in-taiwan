@@ -21,9 +21,14 @@ defmodule FoodInTaiwanWeb.ItemLive.New do
     {:noreply, assign(socket, changeset: changeset, tags: tags)}
   end
 
+  def tags_as_str_list(nil), do: []
+  def tags_as_str_list(list) when is_list(list) do
+       list |> Enum.map(&String.to_integer/1)
+  end
+
   def handle_event("validate", %{"item" => item_params}, socket) do
     # Turn IDs back to full objects
-    tag_ids = item_params["tags"] |> Enum.map(&String.to_integer/1)
+    tag_ids = tags_as_str_list(item_params["tags"])
     tags = Tags.list_tags(1, 100) |> Enum.filter(fn tag -> Enum.member?(tag_ids, tag.id) end)
 
     changeset =
@@ -36,7 +41,7 @@ defmodule FoodInTaiwanWeb.ItemLive.New do
 
   def handle_event("save", %{"item" => item_params}, socket) do
     # Turn IDs back to full objects
-    tag_ids = item_params["tags"] |> Enum.map(&String.to_integer/1)
+    tag_ids = tags_as_str_list(item_params["tags"])
     tags = Tags.list_tags(1, 100) |> Enum.filter(fn tag -> Enum.member?(tag_ids, tag.id) end)
 
     case Items.create_item(item_params, tags) do
