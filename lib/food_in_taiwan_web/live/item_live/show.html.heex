@@ -1,0 +1,83 @@
+<h2><%= @item.name %> (<%= @item.mandarin %>)</h2>
+
+<!-- TODO: On mobile I'm gonna wanna do flex-wrap: wrap; -->
+<div style="display: flex">
+  <!-- Grow so that the picture is on the right when the description is too short to push it. -->
+  <p style="flex-grow: 1;"><%= @item.description %></p>
+
+  <a style="width: 200px" href={"#{@item.picture_url}"} target="_blank">
+    <img src={"#{@item.picture_url}"} />
+  </a>
+</div>
+
+<table>
+  <tr>
+    <th>Information</th>
+    <th></th>
+  </tr>
+  <!--
+  <tr>
+    <td>Main Ingredients</td>
+    <td style="color: red; text-decoration: underline;"><a href="#">Soft Tofu</a>, <a href="#">Beef</a>, <a href="#">Chili</a>, <a href="#">豆瓣醬</a></td>
+  </tr>
+  <tr>
+    <td>Commonly eaten with</td>
+    <td style="color: red; text-decoration: underline;"><a href="#">Rice</a></td>
+  </tr>
+  -->
+  <tr>
+    <td>Commonly eaten</td>
+    <td><%= @temperatures |> Enum.join(", ") %></td>
+  </tr>
+  <tr>
+    <td>Season</td>
+    <td><%= @seasons |> Enum.join(", ") %></td>
+  </tr>
+  <%= if @item.wikipedia_url do %>
+  <tr>
+    <td><a href={"#{@item.wikipedia_url}"}>Wikipedia</a></td>
+    <td></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td>Tags</td>
+    <td><%= @item.tags |> Enum.map(&(&1.name)) |> Enum.join(", ") %></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th>Names</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>English</td>
+    <td><%= @item.name %></td>
+  </tr>
+  <tr>
+    <td>Chinese</td>
+    <td><%= @item.mandarin %></td>
+  </tr>
+  <tr>
+    <td>PinYin</td>
+    <%= if @item.mandarin do %>
+    <td><%= Hanyutils.to_marked_pinyin(@item.mandarin) %></td>
+    <% else %>
+    <td></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>ZhuYin</td>
+    <%= if @item.mandarin do %>
+    <td><%= Hanyutils.to_zhuyin(@item.mandarin) %></td>
+    <% else %>
+    <td></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>Literal Meaning</td>
+    <td><%= @item.meaning %></td>
+  </tr>
+</table>
+<span><%= live_redirect "Edit", to: Routes.item_edit_path(@socket, :edit, @item) %></span>
+<span><%= live_redirect "Back", to: Routes.item_index_path(@socket, :index) %></span>
+    
