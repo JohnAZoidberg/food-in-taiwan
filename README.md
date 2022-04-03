@@ -1,6 +1,14 @@
 # Food in Taiwan
 
-Development:
+To start your Phoenix server:
+
+  * Install dependencies with `mix deps.get`
+  * Create and migrate your database with `mix ecto.setup`
+  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+  * Run migrations with `mix ecto.migrate`
+  * Rollback to previous migration with `mix ecto rollback -n1`
+
+Also make sure to start the database:
 
 ```sh
 docker run --detach --rm \
@@ -15,6 +23,8 @@ mix phx.server
 # Stop postgres container after you're done
 docker stop postgres
 ```
+
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Use-cases
 
